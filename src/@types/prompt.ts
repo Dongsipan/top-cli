@@ -1,11 +1,11 @@
-export type Choice = 'vue' | 'react'
+export type Frame = 'vue' | 'react'
 
-export type Choices = Choice[]
+export type Choices = Frame[]
 
 export type Question = 'frame' | 'description' | 'author'
 
 export interface Answer {
-  frame: Choice
+  frame: Frame
   description: string
   author: string
 }

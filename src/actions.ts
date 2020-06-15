@@ -1,7 +1,7 @@
 import { Actions } from "./@types/action"
 import logSymbols from 'log-symbols'
 import chalk from 'chalk'
-import { checkFolder, prompt } from "./utils"
+import { checkFolder, prompt, downloadTemplate } from "./utils"
 export const create = async (projectName: string) => {
   console.log(projectName)
   if (projectName === undefined) {
@@ -13,6 +13,7 @@ export const create = async (projectName: string) => {
           console.log(logSymbols.warning, chalk.yellow('react模板还在路上，莫急莫急~'));
           process.exit(1);
         }
+        downloadTemplate(answer.frame, projectName)
       })
     })
   }

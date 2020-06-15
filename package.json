@@ -20,8 +20,10 @@
     "@types/inquirer": "^6.5.0",
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
+    "download-git-repo": "^3.0.2",
     "inquirer": "^7.2.0",
     "log-symbols": "^4.0.0",
+    "ora": "^4.0.4",
     "typescript": "^3.9.5"
   },
   "devDependencies": {
