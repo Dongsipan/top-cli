@@ -1,4 +1,22 @@
 import { Actions } from "./@types/action"
+import logSymbols from 'log-symbols'
+import chalk from 'chalk'
+import { checkFolder, prompt } from "./utils"
+export const create = async (projectName: string) => {
+  console.log(projectName)
+  if (projectName === undefined) {
+    console.log(logSymbols.error, chalk.red('创建项目的时候，请输入项目名'))
+  } else {
+    checkFolder(projectName).then(() => {
+      prompt().then(answer => {
+        if (answer.frame === 'react') {
+          console.log(logSymbols.warning, chalk.yellow('react模板还在路上，莫急莫急~'));
+          process.exit(1);
+        }
+      })
+    })
+  }
+}
 
 const Actions: Actions = {
   create: {

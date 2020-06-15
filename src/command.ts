@@ -1,5 +1,5 @@
 import { program } from 'commander'
-import Actions from "./actions"
+import Actions, { create } from "./actions"
 import { ActionName } from './@types/action'
 
 
@@ -17,7 +17,8 @@ function addAction() {
     program.command(actionName).description(action.description).alias(action.alias).action(() => {
       switch (actionName) {
         case 'create':
-          console.log('create')
+          const projectName = process.argv.slice(3)[0]
+          create(projectName)
           break
         case 'init':
           console.log('init')
