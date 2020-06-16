@@ -10,8 +10,8 @@ export const create = async (projectName: string) => {
     checkFolder(projectName).then(() => {
       prompt().then(answer => {
         if (answer.frame === 'react') {
-          console.log(logSymbols.warning, chalk.yellow('react模板还在路上，莫急莫急~'));
-          process.exit(1);
+          console.log(logSymbols.warning, chalk.yellow('react模板还在路上，莫急莫急~'))
+          process.exit(1)
         }
         downloadTemplate(answer.frame, projectName)
       })

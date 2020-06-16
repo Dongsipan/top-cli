@@ -63,6 +63,10 @@ export const downloadTemplate = (frame: Frame, projectName: string) => {
       console.log(err)
       console.log(dir)
     })
+  }).catch((err) => {
+    console.log(logSymbols.error, chalk.red(err))
+    console.log(logSymbols.error, chalk.red('模板下载失败'))
+    process.exit(1)
   })
 }
 
