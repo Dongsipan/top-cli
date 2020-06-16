@@ -6,7 +6,7 @@ module.exports = (env = {}) => {
     target: 'node',
     devtool: env.development ? 'cheap-eval-source-map' : false,
     resolve: { // tells Webpack what files to watch.
-      extensions: ['.ts', '.js'],
+      extensions: ['.ts', '.js', '.json'],
       modules: ['node_modules', 'src', 'package.json'],
     },
     module: {

@@ -44,10 +44,7 @@ export const prompt = () => {
       })
   })
 }
-/**
-  * 根据用户输入的配置信息下载模版&更新模版配置
-  * 下载模版比较耗时,这里通过ora插入下载loading, 提示用户正在下载模版
-  */
+
 export const downloadTemplate = (frame: Frame, projectName: string) => {
   let loading = ora('模板下载中...')
   loading.start('模板下载中...')
@@ -59,14 +56,17 @@ export const downloadTemplate = (frame: Frame, projectName: string) => {
   }
   console.log(source)
 
-  download(projectName, source).then(() => {
+  downloadProject(projectName, source).then(() => {
     loading.succeed('模板下载完成')
-    // const fileName = `${projectName}/package.json`
-
+    const path = process.cwd() + `\\${projectName}`
+    fs.opendir(path, (err, dir) => {
+      console.log(err)
+      console.log(dir)
+    })
   })
 }
 
-export const download = (projectName: string, source: string) => {
+export const downloadProject = (projectName: string, source: string) => {
   return new Promise((resolve, reject) => {
     downloadGit(source, projectName, { clone: true }, (err: any) => {
       if (err) {
