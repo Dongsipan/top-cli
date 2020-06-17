@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/inquirer": "^6.5.0",
+    "@types/node": "^14.0.13",
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "download-git-repo": "^1.1.0",
@@ -27,7 +28,6 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
-    "@types/node": "^14.0.13",
     "nodemon-webpack-plugin": "^4.3.2",
     "ts-loader": "^7.0.5",
     "webpack": "^4.43.0",

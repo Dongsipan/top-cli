@@ -6,6 +6,8 @@ import ora from 'ora'
 import downloadGit from 'download-git-repo'
 import { Prompt, Answer, Frame } from './@types/prompt'
 import config from './config'
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 
 export const checkFolder = async (name: string) => {
   return new Promise((resolve) => {
@@ -59,9 +61,8 @@ export const downloadTemplate = (frame: Frame, projectName: string) => {
   downloadProject(projectName, source).then(() => {
     loading.succeed('模板下载完成')
     const path = process.cwd() + `\\${projectName}`
-    fs.opendir(path, (err, dir) => {
-      console.log(err)
-      console.log(dir)
+    fs.opendir(path, async (err, dir) => {
+      await loadCommand('yarn', '安装依赖')
     })
   }).catch((err) => {
     console.log(logSymbols.error, chalk.red(err))
@@ -80,4 +81,11 @@ export const downloadProject = (projectName: string, source: string) => {
       }
     })
   });
+}
+
+export const loadCommand = async (cmd: string, text: string) => {
+  const loading = ora()
+  loading.start(`${text}: 命令执行中...`)
+  await exec(cmd)
+  loading.succeed(`${text}: 命令执行完成`)
 }
