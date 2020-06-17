@@ -28,14 +28,6 @@ const Actions: Actions = {
     ],
     alias: 'c' // 命令简称
   },
-  init: {
-    description: '初始化项目',
-    usages: [
-      'top-cli init',
-      'topc init'
-    ],
-    alias: 'i'
-  },
   dev: {
     description: '本地启动项目',
     usages: [

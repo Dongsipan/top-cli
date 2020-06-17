@@ -20,9 +20,6 @@ function addAction() {
           const projectName = process.argv.slice(3)[0]
           create(projectName)
           break
-        case 'init':
-          console.log('init')
-          break
         case 'dev':
           console.log('dev')
           break

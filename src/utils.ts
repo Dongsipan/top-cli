@@ -84,7 +84,6 @@ export const downloadProject = (projectName: string, source: string) => {
 export const loadCommand = async (cmd: string, text: string, projectName: string) => {
   const loading = ora()
   const targetDir = path.resolve(projectName)
-  console.log(targetDir)
   loading.start(`${text}: 命令执行中...`)
   await exec(cmd, {
     cwd: targetDir

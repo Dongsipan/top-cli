@@ -3,7 +3,7 @@ export type Option = {
   description: string
   defaultValue: string | boolean
 }
-export type ActionName = 'create' | 'init' | 'dev' | 'build'
+export type ActionName = 'create' | 'dev' | 'build'
 
 export type Actions = {
   [K in ActionName]: Action
