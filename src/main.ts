@@ -1,6 +1,8 @@
 import { program } from 'commander'
 import addAction from './command';
+import { loadCommand } from './utils';
 
+loadCommand('yarn', '安装依赖', 'vuetest')
 addAction()
 
 program.version(require('../package.json').version, '-v --version')
