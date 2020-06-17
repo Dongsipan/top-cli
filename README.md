@@ -16,14 +16,6 @@ yarn
 top-cli create projectname
 ```
 
-### 项目初始化
-
-切换到到上一步创建的 projectname 下，执行下面命令
-
-```
-top-cli init
-```
-
 ### 项目启动
 
 lbc dev -p 8000
