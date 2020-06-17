@@ -15,7 +15,3 @@ yarn
 ```
 top-cli create projectname
 ```
-
-### 项目启动
-
-lbc dev -p 8000
